@@ -1,0 +1,35 @@
+{
+  "required_lines": [
+    {
+      "values": [
+        "Version:"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "(?-mix:Microsoft SQL Server \\d+.\\d+)"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Databases on the server:"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "System Logins on this Server:"
+      ],
+      "options": {
+      }
+    }
+  ],
+  "known_failures": [
+
+  ]
+}

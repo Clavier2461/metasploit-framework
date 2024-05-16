@@ -1,0 +1,49 @@
+{
+  "required_lines": [
+    {
+      "values": [
+        "(?-mix:Instance Name: \"\\w+\")"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Microsoft SQL Server Schema"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Host:"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Port:"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Instance:"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Version:"
+      ],
+      "options": {
+      }
+    }
+  ],
+  "known_failures": [
+
+  ]
+}

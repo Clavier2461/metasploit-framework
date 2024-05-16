@@ -1,0 +1,21 @@
+{
+  "required_lines": [
+    {
+      "values": [
+        "(?-mix:Version: \\d+.\\d+.\\d+)"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "(?-mix:Encryption: (?:on|off|unsupported|required|unknown))"
+      ],
+      "options": {
+      }
+    }
+  ],
+  "known_failures": [
+
+  ]
+}

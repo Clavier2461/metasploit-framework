@@ -1,0 +1,37 @@
+use auxiliary/scanner/mssql/mssql_login
+Stopping all jobs...
+[4mmsf6[0m post([1m[31mtest/mssql[0m) [0m> irb -e '(self.respond_to?(:framework) ? framework : self).datastore.user_defined.clear'
+[*] New in Metasploit 6.4 - The CreateSession option within this module can open an interactive session
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> run PASS_FILE= USER_FILE= CreateSession=true username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> [*] 127.0.0.1:1433        - 127.0.0.1:1433 - MSSQL - Starting authentication scanner.
+[!] 127.0.0.1:1433        - No active DB -- Credential data will not be saved!
+[+] 127.0.0.1:1433        - 127.0.0.1:1433 - Login Successful: WORKSTATION\sa:yourStrong(!)Password
+[*] MSSQL session 5 opened (127.0.0.1:35583 -> 127.0.0.1:1433) at 2024-05-16 08:44:34 +0000
+use auxiliary/scanner/mssql/mssql_schemadump
+[*] 127.0.0.1:1433        - Scanned 1 of 1 hosts (100% complete)
+[*] 127.0.0.1:1433        - Bruteforce completed, 1 credential was successful.
+[*] 127.0.0.1:1433        - 1 MSSQL session was opened successfully.
+[*] Auxiliary module execution completed
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> run session=5 Verbose=true
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_schemadump[0m) [0m> [*] Using existing session 5
+[*] Instance Name: "ce1aa7f60e2f"
+[+] Microsoft SQL Server Schema 
+ Host: 127.0.0.1 
+ Port: 1433 
+ Instance: ce1aa7f60e2f 
+ Version: Microsoft SQL Server 2019 (RTM-CU26) (KB5035123) - 15.0.4365.2 (X64) 
+	Mar 29 2024 23:02:47 
+	Copyright (C) 2019 Microsoft Corporation
+	Developer Edition (64-bit) on Linux (Ubuntu 20.04.6 LTS) <X64> 
+====================
+
+
+[!] No schema information found
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+sessions -K
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_schemadump[0m) [0m> jobs -K
+[*] Killing all sessions...
+[*] 127.0.0.1 - MSSQL session 5 closed.
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_schemadump[0m) [0m> 

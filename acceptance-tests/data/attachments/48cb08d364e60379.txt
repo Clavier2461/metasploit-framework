@@ -1,0 +1,12 @@
+use auxiliary/scanner/mssql/mssql_version
+Stopping all jobs...
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_version[0m) [0m> run lhost=127.0.0.1 username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master Verbose=true
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_version[0m) [0m> [*] 127.0.0.1:1433 - SQL Server for 127.0.0.1:
+[+] 127.0.0.1:1433 - Version: 15.0.4365
+[+] 127.0.0.1:1433 - Encryption: unsupported
+[*] Auxiliary module execution completed
+sessions -K
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_version[0m) [0m> jobs -K
+[*] Killing all sessions...
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_version[0m) [0m> 

@@ -1,0 +1,16 @@
+## Load test modules
+loadpath test/modules
+
+## Session module 
+use auxiliary/scanner/mssql/mssql_login
+
+## Set global datastore
+irb -e '(self.respond_to?(:framework) ? framework : self).datastore.user_defined.clear'
+
+## Run command
+run lhost=127.0.0.1 username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master
+
+
+## Replication commands
+use auxiliary/scanner/mssql/mssql_schemadump
+run session=3 Verbose=true

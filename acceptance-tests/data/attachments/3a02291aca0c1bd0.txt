@@ -1,0 +1,14 @@
+{
+  "required_lines": [
+    {
+      "values": [
+        "(?-mix:Instance Name: \"\\w+\")"
+      ],
+      "options": {
+      }
+    }
+  ],
+  "known_failures": [
+
+  ]
+}

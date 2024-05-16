@@ -1,0 +1,21 @@
+{
+  "required_lines": [
+    {
+      "values": [
+        "Response"
+      ],
+      "options": {
+      }
+    },
+    {
+      "values": [
+        "Microsoft SQL Server"
+      ],
+      "options": {
+      }
+    }
+  ],
+  "known_failures": [
+
+  ]
+}

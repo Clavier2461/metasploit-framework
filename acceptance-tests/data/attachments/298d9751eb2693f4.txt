@@ -1,0 +1,22 @@
+use auxiliary/admin/mssql/mssql_sql
+Stopping all jobs...
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_sql[0m) [0m> run lhost=127.0.0.1 username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master Verbose=true
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_sql[0m) [0m> [*] Running module against 127.0.0.1
+[*] 127.0.0.1:1433 - SQL Query: select @@version
+[*] 127.0.0.1:1433 - Row Count: 1 (Status: 16 Command: 193)
+Response
+========
+
+ NULL
+ ----
+ Microsoft SQL Server 2022 (RTM-CU12-GDR) (KB5036343) - 16.0.4120.1 (X64) 
+	Mar 18 2024 12:02:14 
+	Copyright (C) 2022 Microsoft Corporation
+	Developer Edition (64-bit) on Linux (Ubuntu 22.04.4 LTS) <X64>
+
+[*] Auxiliary module execution completed
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_sql[0m) [0m> sessions -K
+jobs -K
+[*] Killing all sessions...
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_sql[0m) [0m> 

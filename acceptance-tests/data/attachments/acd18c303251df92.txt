@@ -1,0 +1,117 @@
+use auxiliary/admin/mssql/mssql_enum
+Stopping all jobs...
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_enum[0m) [0m> run lhost=127.0.0.1 username=sa password=yourStrong(!)Password rhost=127.0.0.1 rport=1433 database=master Verbose=true
+[*] New in Metasploit 6.4 - This module can target a SESSION or an RHOST
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_enum[0m) [0m> [*] Running module against 127.0.0.1
+[*] 127.0.0.1:1433 - Running MS SQL Server Enumeration...
+[*] 127.0.0.1:1433 - Version:
+[*]	Microsoft SQL Server 2019 (RTM-CU26) (KB5035123) - 15.0.4365.2 (X64) 
+[*]		Mar 29 2024 23:02:47 
+[*]		Copyright (C) 2019 Microsoft Corporation
+[*]		Developer Edition (64-bit) on Linux (Ubuntu 20.04.6 LTS) <X64>[*] 127.0.0.1:1433 - Configuration Parameters:
+[*] 127.0.0.1:1433 - 	C2 Audit Mode is Not Enabled
+[*] 127.0.0.1:1433 - 	xp_cmdshell is Not Enabled
+[*] 127.0.0.1:1433 - 	remote access is Enabled
+[*] 127.0.0.1:1433 - 	allow updates is Not Enabled
+[*] 127.0.0.1:1433 - 	Database Mail XPs is Not Enabled
+[*] 127.0.0.1:1433 - 	Ole Automation Procedures are Not Enabled
+[*] 127.0.0.1:1433 - Databases on the server:
+[*] 127.0.0.1:1433 - 	Database name:master
+[*] 127.0.0.1:1433 - 	Database Files for master:
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/master.mdf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/mastlog.ldf
+[*] 127.0.0.1:1433 - 	Database name:tempdb
+[*] 127.0.0.1:1433 - 	Database Files for tempdb:
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/tempdb.mdf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/templog.ldf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/tempdb2.ndf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/tempdb3.ndf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/tempdb4.ndf
+[*] 127.0.0.1:1433 - 	Database name:model
+[*] 127.0.0.1:1433 - 	Database Files for model:
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/model.mdf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/modellog.ldf
+[*] 127.0.0.1:1433 - 	Database name:msdb
+[*] 127.0.0.1:1433 - 	Database Files for msdb:
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/MSDBData.mdf
+[*] 127.0.0.1:1433 - 		/var/opt/mssql/data/MSDBLog.ldf
+[*] 127.0.0.1:1433 - System Logins on this Server:
+[*] 127.0.0.1:1433 - 	sa
+[*] 127.0.0.1:1433 - 	##MS_SQLResourceSigningCertificate##
+[*] 127.0.0.1:1433 - 	##MS_SQLReplicationSigningCertificate##
+[*] 127.0.0.1:1433 - 	##MS_SQLAuthenticatorCertificate##
+[*] 127.0.0.1:1433 - 	##MS_PolicySigningCertificate##
+[*] 127.0.0.1:1433 - 	##MS_SmoExtendedSigningCertificate##
+[*] 127.0.0.1:1433 - 	##MS_PolicyEventProcessingLogin##
+[*] 127.0.0.1:1433 - 	##MS_PolicyTsqlExecutionLogin##
+[*] 127.0.0.1:1433 - 	##MS_AgentSigningCertificate##
+[*] 127.0.0.1:1433 - 	BUILTIN\Administrators
+[*] 127.0.0.1:1433 - 	NT AUTHORITY\NETWORK SERVICE
+[*] 127.0.0.1:1433 - 	NT AUTHORITY\SYSTEM
+[*] 127.0.0.1:1433 - Disabled Accounts:
+[*] 127.0.0.1:1433 - 	##MS_PolicyEventProcessingLogin##
+[*] 127.0.0.1:1433 - 	##MS_PolicyTsqlExecutionLogin##
+[*] 127.0.0.1:1433 - No Accounts Policy is set for:
+[*] 127.0.0.1:1433 - 	All System Accounts have the Windows Account Policy Applied to them.
+[*] 127.0.0.1:1433 - Password Expiration is not checked for:
+[*] 127.0.0.1:1433 - 	sa
+[*] 127.0.0.1:1433 - 	##MS_PolicyEventProcessingLogin##
+[*] 127.0.0.1:1433 - 	##MS_PolicyTsqlExecutionLogin##
+[*] 127.0.0.1:1433 - System Admin Logins on this Server:
+[*] 127.0.0.1:1433 - 	sa
+[*] 127.0.0.1:1433 - 	BUILTIN\Administrators
+[*] 127.0.0.1:1433 - 	NT AUTHORITY\NETWORK SERVICE
+[*] 127.0.0.1:1433 - Windows Logins on this Server:
+[*] 127.0.0.1:1433 - 	NT AUTHORITY\NETWORK SERVICE
+[*] 127.0.0.1:1433 - 	NT AUTHORITY\SYSTEM
+[*] 127.0.0.1:1433 - Windows Groups that can logins on this Server:
+[*] 127.0.0.1:1433 - 	BUILTIN\Administrators
+[*] 127.0.0.1:1433 - Accounts with Username and Password being the same:
+[*] 127.0.0.1:1433 - 	No Account with its password being the same as its username was found.
+[*] 127.0.0.1:1433 - Accounts with empty password:
+[*] 127.0.0.1:1433 - 	No Accounts with empty passwords where found.
+[*] 127.0.0.1:1433 - Stored Procedures with Public Execute Permission found:
+[*] 127.0.0.1:1433 - 	sp_replsetsyncstatus
+[*] 127.0.0.1:1433 - 	sp_replcounters
+[*] 127.0.0.1:1433 - 	sp_replsendtoqueue
+[*] 127.0.0.1:1433 - 	sp_resyncexecutesql
+[*] 127.0.0.1:1433 - 	sp_prepexecrpc
+[*] 127.0.0.1:1433 - 	sp_repltrans
+[*] 127.0.0.1:1433 - 	sp_xml_preparedocument
+[*] 127.0.0.1:1433 - 	xp_qv
+[*] 127.0.0.1:1433 - 	xp_getnetname
+[*] 127.0.0.1:1433 - 	sp_releaseschemalock
+[*] 127.0.0.1:1433 - 	sp_refreshview
+[*] 127.0.0.1:1433 - 	sp_replcmds
+[*] 127.0.0.1:1433 - 	sp_unprepare
+[*] 127.0.0.1:1433 - 	sp_resyncprepare
+[*] 127.0.0.1:1433 - 	sp_createorphan
+[*] 127.0.0.1:1433 - 	xp_dirtree
+[*] 127.0.0.1:1433 - 	sp_replwritetovarbin
+[*] 127.0.0.1:1433 - 	sp_replsetoriginator
+[*] 127.0.0.1:1433 - 	sp_xml_removedocument
+[*] 127.0.0.1:1433 - 	sp_repldone
+[*] 127.0.0.1:1433 - 	sp_reset_connection
+[*] 127.0.0.1:1433 - 	xp_fileexist
+[*] 127.0.0.1:1433 - 	xp_fixeddrives
+[*] 127.0.0.1:1433 - 	sp_getschemalock
+[*] 127.0.0.1:1433 - 	sp_prepexec
+[*] 127.0.0.1:1433 - 	xp_revokelogin
+[*] 127.0.0.1:1433 - 	sp_execute_external_script
+[*] 127.0.0.1:1433 - 	sp_resyncuniquetable
+[*] 127.0.0.1:1433 - 	sp_replflush
+[*] 127.0.0.1:1433 - 	sp_resyncexecute
+[*] 127.0.0.1:1433 - 	xp_grantlogin
+[*] 127.0.0.1:1433 - 	sp_droporphans
+[*] 127.0.0.1:1433 - 	xp_regread
+[*] 127.0.0.1:1433 - 	sp_getbindtoken
+[*] 127.0.0.1:1433 - 	sp_replincrementlsn
+[*] 127.0.0.1:1433 - Instances found on this server:
+[*] 127.0.0.1:1433 - 	MSSQLSERVER
+[*] 127.0.0.1:1433 - Default Server Instance SQL Server Service is running under the privilege of:
+[*] 127.0.0.1:1433 - 	LocalSystem
+[*] Auxiliary module execution completed
+sessions -K
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_enum[0m) [0m> jobs -K
+[*] Killing all sessions...
+[4mmsf6[0m auxiliary([1m[31madmin/mssql/mssql_enum[0m) [0m> 
